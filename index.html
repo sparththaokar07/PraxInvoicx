@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praxinvoicx</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section id="authSection" class="card active">
+        <h1>Praxinvoicx</h1>
+        <p class="subtitle">Professional invoicing for modern businesses.</p>
+
+        <div class="tabs">
+          <button class="tab active" data-mode="email">E-mail</button>
+          <button class="tab" data-mode="mobile">Mobile Number</button>
+        </div>
+
+        <label for="identifierInput" id="identifierLabel">Business E-mail</label>
+        <input id="identifierInput" type="email" placeholder="you@company.com" />
+
+        <button id="sendOtpBtn" class="primary">Send OTP</button>
+
+        <div id="otpGroup" class="otp-group hidden">
+          <label for="otpInput">Enter OTP</label>
+          <input id="otpInput" type="text" maxlength="6" placeholder="6-digit OTP" />
+          <small id="otpHint">Demo OTP: 123456</small>
+          <button id="verifyOtpBtn" class="primary">Verify & Continue</button>
+        </div>
+      </section>
+
+      <section id="accountSection" class="card hidden">
+        <h2>Select Business Account</h2>
+        <p class="subtitle">
+          Multiple business accounts under one login are supported.
+        </p>
+        <div id="accountList" class="account-list"></div>
+      </section>
+
+      <section id="invoiceSection" class="card hidden">
+        <header class="invoice-header">
+          <div>
+            <h2>Invoice Builder</h2>
+            <p class="subtitle">Generate printable, PDF-ready and online invoices.</p>
+          </div>
+          <span id="selectedAccountTag" class="pill"></span>
+        </header>
+
+        <div class="grid">
+          <div>
+            <label>Business Name</label>
+            <input id="businessName" type="text" placeholder="Your business name" />
+          </div>
+          <div>
+            <label>Client Name</label>
+            <input id="clientName" type="text" placeholder="Client name" />
+          </div>
+          <div>
+            <label>Invoice Number</label>
+            <input id="invoiceNumber" type="text" placeholder="INV-0001" />
+          </div>
+          <div>
+            <label>Date</label>
+            <input id="invoiceDate" type="date" />
+          </div>
+          <div class="full">
+            <label>Business Logo</label>
+            <input id="logoInput" type="file" accept="image/*" />
+          </div>
+        </div>
+
+        <h3>Invoice Items (INR)</h3>
+        <div id="itemsContainer"></div>
+        <button id="addItemBtn" class="ghost">+ Add Item</button>
+
+        <div class="actions">
+          <button id="previewBtn" class="primary">Preview Invoice</button>
+          <button id="printBtn" class="ghost">Printable View</button>
+          <button id="pdfBtn" class="ghost">Download PDF</button>
+          <button id="linkBtn" class="ghost">Create Online Link</button>
+        </div>
+
+        <div id="shareArea" class="hidden share-area">
+          <label>Online Invoice Link</label>
+          <input id="shareLink" type="text" readonly />
+        </div>
+
+        <article id="invoicePreview" class="invoice-preview hidden"></article>
+      </section>
+    </main>
+
+    <footer>
+      <p>The project by Praxcedez</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
